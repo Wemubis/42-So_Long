@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 14:54:37 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/02/13 20:31:13 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/02/13 20:40:24 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	add_back(t_lst **lst, t_lst *new);
 /*------------------ UTILS ------------------*/
 void	error(char *str);
 char	**parse_file(char *file_name);
+void	check_map_validity(char **map);
 
 /*------------------ WIDNOW -----------------*/
 
