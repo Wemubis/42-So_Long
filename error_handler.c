@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 18:30:18 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/02/13 18:37:20 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/02/19 19:34:56 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,21 @@ void	error(char *str)
 	exit(EXIT_FAILURE);
 }
 
-int	print_error(char *str)
+static void	ft_free(char **map)
 {
-	ft_printf("Error : %s\n", str);
-	return (1);
+	int	i;
+
+	i = 0;
+	while (map[i])
+	{
+		free(map[i]);
+		i++;
+	}
+	free(map);
+}
+
+void	ft_free_error(char *str, char **map)
+{
+	ft_free(map);
+	error(str);
 }
