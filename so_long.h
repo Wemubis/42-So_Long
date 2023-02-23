@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 14:54:37 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/02/19 19:31:08 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/02/23 12:21:24 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 # define SO_LONG_H
 
 /*----------------- HEADERS -----------------*/
+# include <errno.h>
 # include "mlx/mlx.h"
 # include "mlx/mlx_int.h"
 # include "libft/libft.h"
 # include "struct.h"
-# include <errno.h>
+
+/*------------------- GAME ------------------*/
+void	start_game(t_start *start);
 
 /*------------------- LIST ------------------*/
 void	*pop(t_lst *head);
