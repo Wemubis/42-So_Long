@@ -9,7 +9,8 @@
 /*   Updated: 2022/11/23 16:57:36 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+
+#include "../libft.h"
 
 size_t	gnl_strlen(char *str)
 {

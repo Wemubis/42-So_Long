@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 static size_t	ft_length_nbr(uintptr_t nb, int len_b)
 {
