@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:40:57 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/02/23 23:00:05 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/02/23 23:19:07 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,9 +77,6 @@ void	check_map_validity(t_start *start)
 	i = 0;
 	line_len = ft_strlen(start->map[i]);
 	map_height = array_size(start->map);
-	start->game->count_c = 0;
-	start->game->count_p = 0;
-	start->game->count_e = 0;
 	while (start->map[i])
 	{
 		if (i == 0 || i == map_height - 1)
