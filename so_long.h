@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 14:54:37 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/02/23 22:22:24 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/02/27 15:41:34 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 
 /*----------------- HEADERS -----------------*/
 # include <errno.h>
-# include "mlx/mlx.h"
-# include "mlx/mlx_int.h"
+# include <fcntl.h>
+# include "mlx2/mlx.h"
+# include "mlx2/mlx_int.h"
 # include "libft/libft.h"
 # include "struct.h"
 
@@ -27,7 +28,7 @@ void	start_game(t_start *start);
 void	*pop(t_lst *head);
 int		lst_size(t_lst *lst);
 t_lst	*new_element(char *data);
-void	add_back(t_lst **lst, t_lst *new);
+void	add_back(t_lst **lst, t_lst *new_one);
 
 /*------------------ UTILS ------------------*/
 void	error(char *str);
@@ -36,8 +37,6 @@ char	**parse_file(char *file_name);
 void	check_map_validity(t_start *start);
 
 /*------------------ WIDNOW -----------------*/
-
-
-/*------------------ PLAYER -----------------*/
+void	*xpm_to_img(void *ptr, char *path, int width, int height);
 
 #endif

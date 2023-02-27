@@ -38,22 +38,22 @@ int	lst_size(t_lst *lst)
 	return (x);
 }
 
-void	add_back(t_lst **lst, t_lst *new)
+void	add_back(t_lst **lst, t_lst *new_one)
 {
 	t_list	*last;
 
-	if (!new || !lst)
+	if (!new_one || !lst)
 		return ;
 	if (!*lst)
 	{
-		*lst = new;
+		*lst = new_one;
 		return ;
 	}
 	last = *lst;
 	while (last->next)
 		last = last->next;
-	last->next = new;
-	new->prev = last;
+	last->next = new_one;
+	new_one->prev = last;
 }
 
 void	*pop(t_lst *head)

@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 18:30:18 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/02/19 19:34:56 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/02/27 17:13:58 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,9 @@ void	ft_free_error(char *str, char **map)
 {
 	ft_free(map);
 	error(str);
+}
+
+void	kill_all()
+{
+	
 }

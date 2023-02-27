@@ -6,13 +6,15 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 16:26:35 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/02/23 22:14:35 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/02/27 16:08:38 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCT_H
 # define STRUCT_H
 
+# include "mlx2/mlx.h"
+# include "mlx2/mlx_int.h"
 
 /*------------------ List ------------------*/
 typedef struct s_lst
@@ -43,7 +45,7 @@ typedef struct s_game
 {
 	t_keys	*go;
 	t_coord	*player;
-	t_coord	*portal;
+	t_coord	*exit;
 	t_coord	*item;
 	int		player_move;
 	int		count_p;
@@ -51,20 +53,31 @@ typedef struct s_game
 	int		count_e;
 }		t_game;
 
+/*----------------- Image ------------------*/
+typedef struct s_image
+{
+	int		height;
+	int		width;
+	char	*p_exit;
+	char	*floor;
+	char	*wall;
+	char	*item;
+	char	*player;
+	void	*img_exit;
+	void	*img_floor;
+	void	*img_wall;
+	void	*img_item;
+	void	*img_player;
+}		t_image;
+
 /*----------------- Start ------------------*/
 typedef struct s_start
 {
-	void	*mlx_ptr;
-	void	*mlx_win;
+	void	*ptr;
+	void	*win;
 	char	**map;
-	int		nb_move;
 	t_game	*game;
-	t_img	*img;
-	t_img	*player;
-	t_img	*portal;
-	t_img	*item;
-	t_img	*wall;
-	t_img	*ground;
+	t_image	*img;
 }		t_start;
 
 #endif
