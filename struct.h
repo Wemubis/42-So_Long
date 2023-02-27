@@ -6,15 +6,15 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 16:26:35 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/02/27 16:08:38 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/02/27 20:50:12 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCT_H
 # define STRUCT_H
 
-# include "mlx2/mlx.h"
-# include "mlx2/mlx_int.h"
+# include "mlx/mlx.h"
+# include "mlx/mlx_int.h"
 
 /*------------------ List ------------------*/
 typedef struct s_lst
