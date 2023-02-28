@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 18:42:27 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/02/27 21:06:15 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/02/28 23:13:37 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	main(int ac, char **av)
 		start->map = parse_file(av[1]);
 		set_variables(start->game);
 		check_map_validity(start);
+		check_if_doable(start);
 		start_game(start);
 	}
 	else

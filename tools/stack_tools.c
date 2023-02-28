@@ -6,11 +6,11 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 20:25:03 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/02/13 18:20:57 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/02/28 22:52:32 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 t_lst	*new_element(char *data)
 {

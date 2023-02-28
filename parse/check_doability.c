@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_mlx_tools.c                                     :+:      :+:    :+:   */
+/*   check_doability.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/27 15:32:29 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/02/27 15:55:12 by mle-boud         ###   ########.fr       */
+/*   Created: 2023/02/28 23:09:24 by mle-boud          #+#    #+#             */
+/*   Updated: 2023/02/28 23:13:26 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
-void	*xpm_to_img(void *ptr, char *path, int width, int height)
+void	check_if_doable(t_start *start)
 {
-	mlx_xpm_file_to_image(ptr, path, width, height);
-}
 
-// void	image_print()
-// {
-// 	mlx_put_image_to_window();
-// }
+}

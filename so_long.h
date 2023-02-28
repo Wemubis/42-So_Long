@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 14:54:37 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/02/27 20:50:04 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/02/28 23:13:59 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void	error(char *str);
 void	ft_free_error(char *str, char **map);
 char	**parse_file(char *file_name);
 void	check_map_validity(t_start *start);
+void	check_if_doable(t_start *start);
 
 /*------------------ WIDNOW -----------------*/
 void	*xpm_to_img(void *ptr, char *path, int width, int height);

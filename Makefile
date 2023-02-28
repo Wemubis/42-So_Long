@@ -6,7 +6,7 @@
 #    By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/13 18:34:33 by mle-boud          #+#    #+#              #
-#    Updated: 2023/02/23 12:10:45 by mle-boud         ###   ########.fr        #
+#    Updated: 2023/02/28 23:18:22 by mle-boud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,30 +21,25 @@ HEADER = push_swap.h /usr/include mlx_linux
 FOR_MLX = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
 
 ################ DIRS ################
-DIR_RULES = /
-DIR_SORT = /
-DIR_UTILS = /
+DIR_TOOLS = tools/
+DIR_PARSE = parse/
 
 ################ SRCS ################
-SRCS = 
+SRCS = main.c move_player.c start_game.c \
 
-RULES = 
+TOOLS = error_handler.c my_mlx_tools.c stack_tools.c \
 
-SORT = 
-
-UTILS = 
+PARSE = check_doability.c check_validity.c parse.c \
 
 ############ DIRS + SRCS #############
-SRCS_RULES = $(addprefix $(DIR_RULES), $(RULES))
-SRCS_SORT = $(addprefix $(DIR_SORT), $(SORT))
-SRCS_UTILS = 	$(addprefix $(DIR_UTILS), $(UTILS))
+SRCS_TOOLS = $(addprefix $(DIR_TOOLS), $(TOOLS))
+SRCS_PARSE = $(addprefix $(DIR_PARSE), $(PARSE))
 
 ################ OBJS ################
 OBJS_SRCS = $(patsubst %.c, %.o,$(SRCS))
-OBJS_RULES =  $(patsubst %.c,%.o,$(SRCS_RULES))
-OBJS_SORT =  $(patsubst %.c,%.o,$(SRCS_SORT))
-OBJS_UTILS =  $(patsubst %.c,%.o,$(SRCS_UTILS))
-OBJS = $(OBJS_SRCS) $(OBJS_RULES) $(OBJS_SORT) $(OBJS_UTILS)
+OBJS_TOOLS =  $(patsubst %.c,%.o,$(SRCS_TOOLS))
+OBJS_PARSE =  $(patsubst %.c,%.o,$(SRCS_PARSE))
+OBJS = $(OBJS_SRCS) $(OBJS_TOOLS) $(OBJS_PARSE)
 
 ################ PHONY ################
 .PHONY: all clean fclean re $(NAME)

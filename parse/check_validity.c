@@ -6,11 +6,11 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:40:57 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/02/23 23:19:07 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/02/28 23:09:09 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 static int	array_size(char **map)
 {
@@ -22,7 +22,7 @@ static int	array_size(char **map)
 	return (i);
 }
 
-static void	is_valid_character(char element, t_start *start)
+static void	is_valid_character(char element, t_start *start, int y, int x)
 {
 	int	valid;
 
@@ -32,9 +32,17 @@ static void	is_valid_character(char element, t_start *start)
 	else if (valid == 'C')
 		start->game->count_c += 1;
 	else if (valid == 'E')
+	{
 		start->game->count_e += 1;
+		start->game->exit.x = x;
+		start->game->exit.y = y;
+	}
 	else if (valid == 'P')
-		start->game->count_e += 1;
+	{
+		start->game->count_p += 1;
+		start->game->player.x = x;
+		start->game->player.y = y;
+	}
 }
 
 static void	is_wall(char *line, char **map)
@@ -50,7 +58,7 @@ static void	is_wall(char *line, char **map)
 	}
 }
 
-static void	is_between(char *line, t_start *start)
+static void	is_between(char *line, t_start *start, int y)
 {
 	int	i;
 	int	line_len;
@@ -63,7 +71,7 @@ static void	is_between(char *line, t_start *start)
 			if (line[i] != '1')
 				ft_free_error("Not a valide middle line", start->map);
 		else
-			is_valid_character(line[i], start->map);
+			is_valid_character(line[i], start->map, y, i);
 		i++;
 	}
 }
@@ -82,7 +90,7 @@ void	check_map_validity(t_start *start)
 		if (i == 0 || i == map_height - 1)
 			is_wall(start->map[i], start->map);
 		else
-			is_between(start->map[i], start);
+			is_between(start->map[i], start, i);
 		if (ft_strlen(start->map[i]) != line_len)
 			ft_free_error("Not a rectangle", start->map);
 		if (start->game->count_p > 1 || start->game->count_e > 1)

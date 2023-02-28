@@ -6,11 +6,11 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 12:29:58 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/02/13 20:30:42 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/02/28 22:54:09 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 static int	open_map(char *file_name)
 {
