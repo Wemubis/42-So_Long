@@ -6,7 +6,7 @@
 #    By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/13 18:34:33 by mle-boud          #+#    #+#              #
-#    Updated: 2023/02/28 23:18:22 by mle-boud         ###   ########.fr        #
+#    Updated: 2023/02/28 23:27:00 by mle-boud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ DIR_TOOLS = tools/
 DIR_PARSE = parse/
 
 ################ SRCS ################
-SRCS = main.c move_player.c start_game.c \
+SRCS = main.c start_game.c \
 
 TOOLS = error_handler.c my_mlx_tools.c stack_tools.c \
 
