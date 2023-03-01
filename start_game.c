@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 12:19:03 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/02/27 23:47:45 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/01 19:03:14 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,25 +28,31 @@ static void	open_img(void *ptr, t_image *img)
 	img->img_player = xpm_to_img(ptr, img->player, img->width, img->height);
 }
 
-static void	init_window(char **map, t_image *img, void *win, void *ptr)
+static void	init_window(t_start *start, t_image *img, void *win, void *ptr)
 {
 	int	i;
 	int	len;
 
 	i = 0;
-	len = ft_strlen(map[0]);
-	while (map[i])
+	len = ft_strlen(start->map[0]);
+	while (start->map[i])
 		i++;
 	win = mlx_new_window(ptr, (len * img->width), (i * img->height), "So_long");
 	if (!win)
 		kill_all();
+	start->win_w = len;
+	start->win_h = i;
 }
 
 void	start_game(t_start *start)
 {
 	start->ptr = mlx_init();
+	if (!start->ptr)
+		ft_free_error("mlx_init() failed", start->map);
 	open_img(start->ptr, start->img);
 	init_window(start->map, start->img, start->win, start->ptr);
-	// mettre des hooks
+	draw_map_on_win(start, start->img);
+	// mlx_hook(start->win, DestroyNotify, ButtonPressMask, kill_all , start);
+	// mlx_key_hook(start->win, "some_fct", start);
 	mlx_loop(start->ptr);
 }

@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:40:57 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/02/28 23:09:09 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/01 17:59:50 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,7 @@ static void	is_valid_character(char element, t_start *start, int y, int x)
 	else if (valid == 'C')
 		start->game->count_c += 1;
 	else if (valid == 'E')
-	{
 		start->game->count_e += 1;
-		start->game->exit.x = x;
-		start->game->exit.y = y;
-	}
 	else if (valid == 'P')
 	{
 		start->game->count_p += 1;

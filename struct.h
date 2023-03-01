@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 16:26:35 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/01 13:31:57 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/01 18:25:46 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,6 @@ typedef struct s_coord
 typedef struct s_game
 {
 	t_coord	player;
-	t_coord	exit;
-	// t_coord	*item;
 	int		nb_move;
 	int		count_p;
 	int		count_c;
@@ -68,6 +66,8 @@ typedef struct s_start
 	void	*ptr;
 	void	*win;
 	char	**map;
+	int		win_h;
+	int		win_w;
 	t_game	*game;
 	t_image	*img;
 }		t_start;
