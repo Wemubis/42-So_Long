@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 18:42:27 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/03 13:13:24 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/03 22:32:16 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,15 @@ static void	set_variables(t_game *game)
 
 int	main(int ac, char **av)
 {
-	t_start	*start;
+	t_start	start;
 
 	if (ac == 2)
 	{
-		start->map = parse_file(av[1]);
-		set_variables(start->game);
-		check_map_validity(start);
-		check_if_doable(start->game, start->map);
-		start_game(start);
+		start.map = parse_file(av[1]);
+		set_variables(start.game);
+		check_map_validity(&start);
+		check_if_doable(start.game, start.map);
+		start_game(&start);
 	}
 	else
 		error("- Usage : ./so_long >map.ber< -");

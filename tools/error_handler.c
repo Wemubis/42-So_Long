@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 18:30:18 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/03 17:15:42 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/03 22:38:32 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_free_error(char *str, char **map)
 	error(str);
 }
 
-void	end(t_start *start)
+int	end(t_start *start)
 {
 	ft_free(start->map);
 	mlx_free_sprites(start->img, start->ptr);

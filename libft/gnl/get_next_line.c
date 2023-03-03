@@ -63,11 +63,11 @@ static char	*read_save_string(int fd, char *string, int rt)
 
 char	*get_next_line(int fd)
 {
-	static char	*string[OPEN_MAX];
+	static char	*string[1024];
 	char		*stash;
 	int			rt;
 
-	if (fd < 0 || fd > OPEN_MAX || BUFFER_SIZE <= 0)
+	if (fd < 0 || fd > 1024 || BUFFER_SIZE <= 0)
 		return (NULL);
 	rt = 1;
 	string[fd] = read_save_string(fd, string[fd], rt);

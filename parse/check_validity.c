@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:40:57 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/01 17:59:50 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/03 22:57:15 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ static int	array_size(char **map)
 
 static void	is_valid_character(char element, t_start *start, int y, int x)
 {
-	int	valid;
+	char	valid;
 
-	valid = ft_strchr("01ECP", element);
+	valid = ft_find_char("01ECP", element);
 	if (!valid)
 		ft_free_error("Character non valid", start->map);
 	else if (valid == 'C')
@@ -64,19 +64,21 @@ static void	is_between(char *line, t_start *start, int y)
 	while (line[i])
 	{
 		if (i == 0 || i == line_len - 1)
+		{
 			if (line[i] != '1')
 				ft_free_error("Not a valide middle line", start->map);
+		}
 		else
-			is_valid_character(line[i], start->map, y, i);
+			is_valid_character(line[i], start, y, i);
 		i++;
 	}
 }
 
 void	check_map_validity(t_start *start)
 {
-	int	i;
-	int	line_len;
-	int	map_height;
+	int		i;
+	int		map_height;
+	size_t	line_len;
 
 	i = 0;
 	line_len = ft_strlen(start->map[i]);

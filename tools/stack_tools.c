@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 20:25:03 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/02/28 22:52:32 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/03 22:48:11 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	lst_size(t_lst *lst)
 
 void	add_back(t_lst **lst, t_lst *new_one)
 {
-	t_list	*last;
+	t_lst	*last;
 
 	if (!new_one || !lst)
 		return ;
@@ -56,7 +56,7 @@ void	add_back(t_lst **lst, t_lst *new_one)
 	new_one->prev = last;
 }
 
-void	*pop(t_lst *head)
+void	pop(t_lst *head)
 {
 	t_lst	*tmp;
 

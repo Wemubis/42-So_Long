@@ -61,6 +61,7 @@ void	*ft_memset(void *b, int c, size_t len);
 /*---------------STRING---------------*/
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t count, size_t size);
+char	ft_find_char(const char *s, int c);
 char	**ft_split(char const *s, char c);
 char	*ft_strcat(char *s1, char const *s2);
 char	*ft_strchr(const char *s, int c);

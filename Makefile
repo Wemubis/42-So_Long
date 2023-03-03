@@ -6,7 +6,7 @@
 #    By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/13 18:34:33 by mle-boud          #+#    #+#              #
-#    Updated: 2023/02/28 23:27:00 by mle-boud         ###   ########.fr        #
+#    Updated: 2023/03/03 22:28:10 by mle-boud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,35 +16,36 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
-HEADER = push_swap.h /usr/include mlx_linux
+HEADER = so_long.h struct.h /usr/include mlx_linux
 
 FOR_MLX = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
 
-################ DIRS ################
+###--------------- DIRS ---------------###
 DIR_TOOLS = tools/
 DIR_PARSE = parse/
 
-################ SRCS ################
+###--------------- SRCS ---------------###
 SRCS = main.c start_game.c \
 
-TOOLS = error_handler.c my_mlx_tools.c stack_tools.c \
+TOOLS = draw_map_on_win.c error_handler.c key_moves.c \
+	my_mlx_tools.c stack_tools.c \
 
 PARSE = check_doability.c check_validity.c parse.c \
 
-############ DIRS + SRCS #############
+###--------------- DIRS + SRCS ---------------###
 SRCS_TOOLS = $(addprefix $(DIR_TOOLS), $(TOOLS))
 SRCS_PARSE = $(addprefix $(DIR_PARSE), $(PARSE))
 
-################ OBJS ################
+###--------------- OBJS ---------------###
 OBJS_SRCS = $(patsubst %.c, %.o,$(SRCS))
 OBJS_TOOLS =  $(patsubst %.c,%.o,$(SRCS_TOOLS))
 OBJS_PARSE =  $(patsubst %.c,%.o,$(SRCS_PARSE))
 OBJS = $(OBJS_SRCS) $(OBJS_TOOLS) $(OBJS_PARSE)
 
-################ PHONY ################
-.PHONY: all clean fclean re $(NAME)
+###--------------- PHONY ---------------###
+.PHONY: all clean fclean re otherMakefile $(NAME)
 
-################ RULES ################
+###--------------- RULES ---------------###
 all: otherMakefile $(NAME)
 
 $(NAME): $(OBJS) libft/libft.a

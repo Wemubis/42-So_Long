@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 12:19:03 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/03 15:38:05 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/03 22:45:20 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ static void	open_img(void *ptr, t_image *img)
 	img->wall = "sprites/wall.xpm";
 	img->item = "sprites/item.xpm";
 	img->player = "sprites/player.xpm";
-	img->img_exit = xpm_to_img(ptr, img->p_exit, img->width, img->height);
-	img->img_floor = xpm_to_img(ptr, img->floor, img->width, img->height);
-	img->img_wall = xpm_to_img(ptr, img->wall, img->width, img->height);
-	img->img_item = xpm_to_img(ptr, img->item, img->width, img->height);
-	img->img_player = xpm_to_img(ptr, img->player, img->width, img->height);
+	img->img_exit = mlx_xpm_file_to_image(ptr, img->p_exit, &img->width, &img->height);
+	img->img_floor = mlx_xpm_file_to_image(ptr, img->floor, &img->width, &img->height);
+	img->img_wall = mlx_xpm_file_to_image(ptr, img->wall, &img->width, &img->height);
+	img->img_item = mlx_xpm_file_to_image(ptr, img->item, &img->width, &img->height);
+	img->img_player = mlx_xpm_file_to_image(ptr, img->player, &img->width, &img->height);
 }
 
 static void	init_window(t_start *start, t_image *img, void *win, void *ptr)
@@ -50,9 +50,9 @@ void	start_game(t_start *start)
 	if (!start->ptr)
 		ft_free_error("mlx_init() failed", start->map);
 	open_img(start->ptr, start->img);
-	init_window(start->map, start->img, start->win, start->ptr);
+	init_window(start, start->img, start->win, start->ptr);
 	draw_map_on_win(start, start->img);
-	mlx_hook(start->win, DestroyNotify, ButtonPressMask, end, start);
-	mlx_key_hook(start->win, key_moves, start);
+	mlx_hook(start->win, DestroyNotify, ButtonPressMask, end, (void *)start);
+	mlx_key_hook(start->win, key_press, (void *)start);
 	mlx_loop(start->ptr);
 }

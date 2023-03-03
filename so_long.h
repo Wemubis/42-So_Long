@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 14:54:37 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/03 16:59:10 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/03 22:48:08 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,17 @@
 
 /*------------------- GAME ------------------*/
 void	start_game(t_start *start);
-int		key_moves(int press, t_start *start);
+int		key_press(int press, t_start *start);
 
 /*------------------- LIST ------------------*/
-void	*pop(t_lst *head);
+void	pop(t_lst *head);
 int		lst_size(t_lst *lst);
 t_lst	*new_element(char *data);
 void	add_back(t_lst **lst, t_lst *new_one);
 
 /*------------------ TOOLS ------------------*/
 void	error(char *str);
-void	end(t_start *start);
+int		end(t_start *start);
 int		kill_all(t_start *start);
 void	ft_free_error(char *str, char **map);
 char	**parse_file(char *file_name);
@@ -53,7 +53,6 @@ void	check_if_doable(t_game *game, char **map);
 
 /*------------------ WIDNOW -----------------*/
 void	mlx_free_sprites(t_image *img, void *ptr);
-void	*xpm_to_img(void *ptr, char *path, int width, int height);
 void	print_to_win(t_start *s, t_game *game, t_image *img, void *sprt);
 void	draw_map_on_win(t_start *start, t_image *img);
 void	draw_player(t_coord player, t_image *img, void *ptr, void *win);
