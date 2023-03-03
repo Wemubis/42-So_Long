@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 14:54:37 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/03 12:50:16 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/03 13:12:26 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,20 @@
 # include "libft/libft.h"
 # include "struct.h"
 
+/*---------- DEFINE, MORE READABLE ----------*/
+# define ESC 53
+# define W 13
+# define A 0
+# define S 1
+# define D 2
+# define UP 1
+# define DOWN -1
+# define LEFT -1
+# define RIGHT 1
+
 /*------------------- GAME ------------------*/
 void	start_game(t_start *start);
+int		key_moves(int press, t_start *start);
 
 /*------------------- LIST ------------------*/
 void	*pop(t_lst *head);
@@ -32,6 +44,7 @@ void	add_back(t_lst **lst, t_lst *new_one);
 
 /*------------------ TOOLS ------------------*/
 void	error(char *str);
+int		kill_all(t_start *start);
 void	ft_free_error(char *str, char **map);
 char	**parse_file(char *file_name);
 void	check_map_validity(t_start *start);

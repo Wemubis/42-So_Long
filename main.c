@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 18:42:27 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/01 13:45:32 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/03 13:13:24 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,5 @@ int	main(int ac, char **av)
 	}
 	else
 		error("- Usage : ./so_long >map.ber< -");
-	// need to free;
 	return (0);
 }
