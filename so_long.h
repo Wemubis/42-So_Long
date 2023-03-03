@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 14:54:37 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/01 19:04:01 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/03 12:50:16 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	check_map_validity(t_start *start);
 void	check_if_doable(t_game *game, char **map);
 
 /*------------------ WIDNOW -----------------*/
+void	mlx_free_sprites(t_image *img, void *ptr);
 void	*xpm_to_img(void *ptr, char *path, int width, int height);
 void	draw_map_on_win(t_start *start, t_image *img);
 void	draw_player(t_coord player, t_image *img, void *ptr, void *win);

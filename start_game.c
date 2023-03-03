@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 12:19:03 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/01 19:03:14 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/01 19:14:53 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	start_game(t_start *start)
 	open_img(start->ptr, start->img);
 	init_window(start->map, start->img, start->win, start->ptr);
 	draw_map_on_win(start, start->img);
-	// mlx_hook(start->win, DestroyNotify, ButtonPressMask, kill_all , start);
-	// mlx_key_hook(start->win, "some_fct", start);
+	mlx_hook(start->win, DestroyNotify, ButtonPressMask, kill_all() , start);
+	// mlx_key_hook(start->win, key_moves(), start);
 	mlx_loop(start->ptr);
 }
