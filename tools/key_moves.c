@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 19:14:01 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/03 15:31:49 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/03 17:16:06 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	esc_press(t_start *start)
 {
 	ft_printf("You noob!!!\n Even a lil baby would have done this map!! ;)\n");
-	kill_all(start);
+	end(start);
 }
 
 static void	collect_item(t_start *s, t_game *game, t_image *img)
@@ -55,7 +55,10 @@ static void	move(t_start *s,t_image *img, char axis, int dir)
 }
 
 static void	finish_game(t_start *start)
-{}
+{
+	ft_printf("Well done bro!! You're THE man");
+	end(start);
+}
 
 int	key_press(int press, t_start *start)
 {

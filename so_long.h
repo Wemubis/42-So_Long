@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 14:54:37 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/03 14:38:32 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/03 16:59:10 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@
 # include "struct.h"
 
 /*---------- DEFINE, MORE READABLE ----------*/
-# define ESC 53
-# define W 13
-# define A 0
-# define S 1
-# define D 2
+# define ESC 27
+# define W 87
+# define A 65
+# define S 83
+# define D 68
 # define UP 1
 # define DOWN -1
 # define LEFT -1
@@ -44,6 +44,7 @@ void	add_back(t_lst **lst, t_lst *new_one);
 
 /*------------------ TOOLS ------------------*/
 void	error(char *str);
+void	end(t_start *start);
 int		kill_all(t_start *start);
 void	ft_free_error(char *str, char **map);
 char	**parse_file(char *file_name);
