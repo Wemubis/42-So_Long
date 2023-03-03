@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 14:54:37 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/03 22:48:08 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/03 23:18:18 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 /*----------------- HEADERS -----------------*/
 # include <errno.h>
 # include <fcntl.h>
-# include "mlx/mlx.h"
-# include "mlx/mlx_int.h"
+# include "mlx_linux/mlx.h"
+# include "mlx_linux/mlx_int.h"
 # include "libft/libft.h"
 # include "struct.h"
 

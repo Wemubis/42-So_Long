@@ -6,7 +6,7 @@
 #    By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/13 18:34:33 by mle-boud          #+#    #+#              #
-#    Updated: 2023/03/03 22:28:10 by mle-boud         ###   ########.fr        #
+#    Updated: 2023/03/03 23:12:52 by mle-boud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
-HEADER = so_long.h struct.h /usr/include mlx_linux
+HEADER = so_long.h struct.h /usr/include Imlx_linux
 
 FOR_MLX = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
 
