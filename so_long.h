@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 14:54:37 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/03 13:12:26 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/03 14:38:32 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void	check_if_doable(t_game *game, char **map);
 /*------------------ WIDNOW -----------------*/
 void	mlx_free_sprites(t_image *img, void *ptr);
 void	*xpm_to_img(void *ptr, char *path, int width, int height);
+void	print_to_win(t_start *s, t_game *game, t_image *img, void *sprt);
 void	draw_map_on_win(t_start *start, t_image *img);
 void	draw_player(t_coord player, t_image *img, void *ptr, void *win);
 void	draw_furnitures(t_start *s, t_image *img, void *image, int x, int y);
