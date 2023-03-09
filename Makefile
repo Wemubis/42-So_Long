@@ -6,7 +6,7 @@
 #    By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/13 18:34:33 by mle-boud          #+#    #+#              #
-#    Updated: 2023/03/03 23:12:52 by mle-boud         ###   ########.fr        #
+#    Updated: 2023/03/09 18:14:07 by mle-boud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
-HEADER = so_long.h struct.h /usr/include Imlx_linux
+HEADER = so_long.h /usr/include Imlx_linux
 
 FOR_MLX = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
 
@@ -28,7 +28,7 @@ DIR_PARSE = parse/
 SRCS = main.c start_game.c \
 
 TOOLS = draw_map_on_win.c error_handler.c key_moves.c \
-	my_mlx_tools.c stack_tools.c \
+	my_mlx_tools.c \
 
 PARSE = check_doability.c check_validity.c parse.c \
 

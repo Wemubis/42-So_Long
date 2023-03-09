@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:40:57 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/03 22:57:15 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/09 17:44:15 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,24 @@ static void	is_valid_character(char element, t_start *start, int y, int x)
 	valid = ft_find_char("01ECP", element);
 	if (!valid)
 		ft_free_error("Character non valid", start->map);
+	else if (valid == '0')
+		start->map[y][x] = 'o';
 	else if (valid == 'C')
-		start->game->count_c += 1;
+	{
+		start->map[y][x] = 'c';
+		start->count_c++;
+	}
 	else if (valid == 'E')
-		start->game->count_e += 1;
+	{
+		start->map[y][x] = 'e';
+		start->count_e++;
+	}
 	else if (valid == 'P')
 	{
-		start->game->count_p += 1;
-		start->game->player.x = x;
-		start->game->player.y = y;
+		start->map[y][x] = 'p';
+		start->count_p++;
+		start->player.x = x;
+		start->player.y = y;
 	}
 }
 
@@ -60,10 +69,10 @@ static void	is_between(char *line, t_start *start, int y)
 	int	line_len;
 
 	i = 0;
-	line_len = ft_strlen(line);
+	line_len = ft_strlen(line) - 1;
 	while (line[i])
 	{
-		if (i == 0 || i == line_len - 1)
+		if (i == 0 && i == line_len)
 		{
 			if (line[i] != '1')
 				ft_free_error("Not a valide middle line", start->map);
@@ -82,19 +91,19 @@ void	check_map_validity(t_start *start)
 
 	i = 0;
 	line_len = ft_strlen(start->map[i]);
-	map_height = array_size(start->map);
+	map_height = array_size(start->map) - 1;
 	while (start->map[i])
 	{
-		if (i == 0 || i == map_height - 1)
+		if (i == 0 || i == map_height)
 			is_wall(start->map[i], start->map);
 		else
 			is_between(start->map[i], start, i);
 		if (ft_strlen(start->map[i]) != line_len)
 			ft_free_error("Not a rectangle", start->map);
-		if (start->game->count_p > 1 || start->game->count_e > 1)
-			ft_free_error("More than ONE player/exit", start->map);
-		if (start->game->count_c > 1)
-			ft_free_error("Less than ONE item", start->map);
 		i++;
 	}
+	if (start->count_p > 1 || start->count_e > 1)
+		ft_free_error("More than ONE player/exit", start->map);
+	if (start->count_c < 1)
+		ft_free_error("Less than ONE item", start->map);
 }

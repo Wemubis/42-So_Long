@@ -6,13 +6,13 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 18:42:27 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/03 22:32:16 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/09 17:50:23 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static void	set_variables(t_game *game)
+static void	set_variables(t_start *game)
 {
 	game->nb_move = 0;
 	game->count_c = 0;
@@ -29,10 +29,10 @@ int	main(int ac, char **av)
 	if (ac == 2)
 	{
 		start.map = parse_file(av[1]);
-		set_variables(start.game);
+		set_variables(&start);
 		check_map_validity(&start);
-		check_if_doable(start.game, start.map);
-		start_game(&start);
+		check_if_doable(&start);
+		// start_game(&start);
 	}
 	else
 		error("- Usage : ./so_long >map.ber< -");

@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 18:27:58 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/01 19:00:47 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/09 17:56:57 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	draw_map_on_win(t_start *start, t_image *img)
 			else if (start->map[y][x] == 'E')
 				draw_furnitures(start, img, img->img_exit, x, y);
 			else if (start->map[y][x] == 'P')
-				draw_player(start->game->player, img, start->ptr, start->win);
+				draw_player(start->player, img, start->ptr, start->win);
 			x++;
 		}
 		y++;

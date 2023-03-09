@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 12:29:58 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/02/28 22:54:09 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/09 18:08:54 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,41 +26,42 @@ static int	open_map(char *file_name)
 		close(fd);
 		error("Is a directory and not a file");
 	}
-	fd = open(file_name, O_RDONLY | O_NOFOLLOW);
+	fd = open(file_name, O_RDONLY);
 	if (fd == -1)
-		error(strerror(errno));
+		error("Can't RDONLY");
 	return (fd);
 }
 
-static char	**list_to_arr(t_lst *list)
+static char	**list_to_arr(t_list *list)
 {
+	t_list *tmp;
 	char	**arr;
+	int		len_line;
 	int		nb_line;
 	int		i;
 
 	i = 0;
-	nb_line = lst_size(list);
+	nb_line = ft_lstsize(list);
+	len_line = ft_strlen(list->content) - 1;
 	arr = malloc(sizeof(char *) * (nb_line + 1));
 	if (!arr)
 		error("malloc");
-	while (list)
+	tmp = list;
+	while (tmp)
 	{
-		arr[i++] = ft_strdup(list->data);
-		if (list->next != NULL)
-		{
-			list = list->next;
-			pop(list->prev);
-		}
-		else
-			pop(list);
+		arr[i++] = ft_strdup(tmp->content);
+		arr[i - 1][len_line] = '\0';
+		tmp = tmp->next;
 	}
+	ft_lstclear(&list, free);
+	free(tmp);
 	arr[i] = NULL;
 	return (arr);
 }
 
 char	**parse_file(char *file_name)
 {
-	t_lst	*list;
+	t_list	*list;
 	char	**map;
 	char	*ret[2];
 	int		fd;
@@ -74,7 +75,7 @@ char	**parse_file(char *file_name)
 		ret[1] = ret[0];
 		if (ret[1] != NULL && ft_strlen(ret[1]) != 0)
 		{
-			add_back(&list, new_element(ft_strdup(ret[1])));
+			ft_lstadd_back(&list, ft_lstnew(ft_strdup(ret[1])));
 			free(ret[1]);
 		}
 	}
