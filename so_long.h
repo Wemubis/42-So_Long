@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 14:54:37 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/09 18:13:54 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/10 19:46:21 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,23 +38,6 @@ typedef struct s_coord
 	int	y;
 }		t_coord;
 
-/*----------------- Image ------------------*/
-typedef struct s_image
-{
-	int		height;
-	int		width;
-	char	*p_exit;
-	char	*floor;
-	char	*wall;
-	char	*item;
-	char	*player;
-	void	*img_exit;
-	void	*img_floor;
-	void	*img_wall;
-	void	*img_item;
-	void	*img_player;
-}		t_image;
-
 /*----------------- Start ------------------*/
 typedef struct s_start
 {
@@ -70,11 +53,22 @@ typedef struct s_start
 	int		count_e;
 	int		check_c;
 	int		check_e;
-	t_image	*img;
+	int		height;
+	int		width;
+	char	*p_exit;
+	char	*floor;
+	char	*wall;
+	char	*item;
+	char	*p_player;
+	void	*img_exit;
+	void	*img_floor;
+	void	*img_wall;
+	void	*img_item;
+	void	*img_player;
 }		t_start;
 
 /*------------------- GAME ------------------*/
-void	start_game(t_start *start);
+void	start_game(t_start *sl);
 int		key_press(int press, t_start *start);
 
 /*------------------ TOOLS ------------------*/
@@ -87,10 +81,8 @@ void	check_map_validity(t_start *start);
 void	check_if_doable(t_start *game);
 
 /*------------------ WIDNOW -----------------*/
-void	mlx_free_sprites(t_image *img, void *ptr);
-void	print_to_win(t_start *s, t_image *img, void *sprt);
-void	draw_map_on_win(t_start *start, t_image *img);
-void	draw_player(t_coord player, t_image *img, void *ptr, void *win);
-void	draw_furnitures(t_start *s, t_image *img, void *image, int x, int y);
+void	mlx_free_sprites(t_start *sl);
+void	print_to_win(t_start *s, void *img);
+void	draw_map_on_win(t_start *sl);
 
 #endif

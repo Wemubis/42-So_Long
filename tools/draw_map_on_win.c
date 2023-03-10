@@ -6,62 +6,54 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 18:27:58 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/09 17:56:57 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/10 19:46:12 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-static void	draw_scene(t_start *start, t_image *img, void *ptr, void *win)
+static void	draw_scene(t_start *sl)
 {
 	int	x;
 	int	y;
 
 	y = 0;
-	while (y < start->win_h)
+	while (sl->map[y])
 	{
 		x = 0;
-		while (x < start->win_w)
+		while (sl->map[y][x])
 		{
-			mlx_put_image_to_window(ptr, win, img->img_floor, x, y);
+			if (sl->map[y][x] == '1')
+				mlx_put_image_to_window(sl->ptr, sl->win, sl->img_wall, x, y);
+			else if (sl->map[y][x] == '0')
+				mlx_put_image_to_window(sl->ptr, sl->win, sl->img_floor, x, y);
 			x++;
 		}
 		y++;
 	}
 }
 
-void	draw_furnitures(t_start *s, t_image *img, void *image, int x, int y)
-{
-	mlx_put_image_to_window(s->ptr, s->win, image, x * img->width,
-				y * img->height);
-}
-
-void	draw_player(t_coord player, t_image *img, void *ptr, void *win)
-{
-	mlx_put_image_to_window(ptr, win, img->img_player, player.x * img->width,
-				player.y * img->height);
-}
-
-void	draw_map_on_win(t_start *start, t_image *img)
+void	draw_map_on_win(t_start *sl)
 {
 	int	x;
 	int	y;
 
 	y = 0;
-	draw_scene(start, img, start->ptr, start->win);
-	while (y < start->win_h)
+	draw_scene(sl);
+	while (y < sl->win_h)
 	{
 		x = 0;
-		while (x < start->win_w)
+		while (x < sl->win_w)
 		{
-			if (start->map[y][x] == '1')
-				draw_furnitures(start, img, img->img_wall, x, y);
-			else if (start->map[y][x] == 'C')
-				draw_furnitures(start, img, img->img_item, x, y);
-			else if (start->map[y][x] == 'E')
-				draw_furnitures(start, img, img->img_exit, x, y);
-			else if (start->map[y][x] == 'P')
-				draw_player(start->player, img, start->ptr, start->win);
+			if (sl->map[y][x] == 'C')
+				mlx_put_image_to_window(sl->ptr, sl->win, sl->img_item,
+					x * sl->width, y * sl->height);
+			else if (sl->map[y][x] == 'E')
+				mlx_put_image_to_window(sl->ptr, sl->win, sl->img_exit,
+					x * sl->width, y * sl->height);
+			else if (sl->map[y][x] == 'P')
+				mlx_put_image_to_window(sl->ptr, sl->win, sl->img_player,
+					x * sl->width, y * sl->height);
 			x++;
 		}
 		y++;

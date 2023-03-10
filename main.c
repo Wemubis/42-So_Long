@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 18:42:27 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/09 17:50:23 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/10 19:10:18 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	main(int ac, char **av)
 		set_variables(&start);
 		check_map_validity(&start);
 		check_if_doable(&start);
-		// start_game(&start);
+		start_game(&start);
 	}
 	else
 		error("- Usage : ./so_long >map.ber< -");

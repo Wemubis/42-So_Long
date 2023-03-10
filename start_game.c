@@ -6,53 +6,59 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 12:19:03 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/03 22:45:20 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/10 20:00:40 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static void	open_img(void *ptr, t_image *img)
+static void	open_img(t_start *s)
 {
-	img->height = 64;
-	img->width = 64;
-	img->p_exit = "sprites/exit.xpm";
-	img->floor = "sprites/floor.xpm";
-	img->wall = "sprites/wall.xpm";
-	img->item = "sprites/item.xpm";
-	img->player = "sprites/player.xpm";
-	img->img_exit = mlx_xpm_file_to_image(ptr, img->p_exit, &img->width, &img->height);
-	img->img_floor = mlx_xpm_file_to_image(ptr, img->floor, &img->width, &img->height);
-	img->img_wall = mlx_xpm_file_to_image(ptr, img->wall, &img->width, &img->height);
-	img->img_item = mlx_xpm_file_to_image(ptr, img->item, &img->width, &img->height);
-	img->img_player = mlx_xpm_file_to_image(ptr, img->player, &img->width, &img->height);
+	s->height = 80;
+	s->width = 80;
+	s->p_exit = "sprites/exit.xpm";
+	s->floor = "sprites/floor.xpm";
+	s->wall = "sprites/wall.xpm";
+	s->item = "sprites/item.xpm";
+	s->p_player = "sprites/player.xpm";
+	s->img_exit = mlx_xpm_file_to_image(s->ptr, s->p_exit, &(s->width),
+			&(s->height));
+	s->img_floor = mlx_xpm_file_to_image(s->ptr, s->floor, &(s->width),
+			&(s->height));
+	s->img_wall = mlx_xpm_file_to_image(s->ptr, s->wall, &(s->width),
+			&(s->height));
+	s->img_item = mlx_xpm_file_to_image(s->ptr, s->item, &(s->width),
+			&(s->height));
+	s->img_player = mlx_xpm_file_to_image(s->ptr, s->p_player, &(s->width),
+			&(s->height));
 }
 
-static void	init_window(t_start *start, t_image *img, void *win, void *ptr)
+static void	init_window(t_start *sl)
 {
 	int	i;
 	int	len;
 
 	i = 0;
-	len = ft_strlen(start->map[0]);
-	while (start->map[i])
+	len = ft_strlen(sl->map[0]);
+	while (sl->map[i])
 		i++;
-	win = mlx_new_window(ptr, (len * img->width), (i * img->height), "So_long");
-	if (!win)
-		kill_all(start);
-	start->win_w = len;
-	start->win_h = i;
+	sl->win = mlx_new_window(sl->ptr, (len * sl->width), (i * sl->height),
+			"So_long");
+	if (!sl->win)
+		kill_all(sl);
+	sl->win_w = len;
+	sl->win_h = i;
 }
 
-void	start_game(t_start *start)
+void	start_game(t_start *sl)
 {
-	start->ptr = mlx_init();
-	if (!start->ptr)
-		ft_free_error("mlx_init() failed", start->map);
-	open_img(start->ptr, start->img);
-	init_window(start, start->img, start->win, start->ptr);
-	draw_map_on_win(start, start->img);
-	mlx_hook(start->win, DestroyNotify, ButtonPressMask, end, (void *)start);
-	mlx_key_hook(start->win, key_press, (void *)start);
-	mlx_loop(start->ptr);
+	sl->ptr = mlx_init();
+	if (!sl->ptr)
+		ft_free_error("mlx_init() failed", sl->map);
+	open_img(sl);
+	init_window(sl);
+	draw_map_on_win(sl);
+	mlx_hook(sl->win, KeyRelease, KeyReleaseMask, key_press, sl);
+	mlx_hook(sl->win, DestroyNotify, ButtonPressMask, end, sl);
+	mlx_loop(sl->ptr);
 }
