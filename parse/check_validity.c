@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:40:57 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/09 17:44:15 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/11 20:08:05 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ static void	is_between(char *line, t_start *start, int y)
 	line_len = ft_strlen(line) - 1;
 	while (line[i])
 	{
-		if (i == 0 && i == line_len)
+		if (i == 0 || i == line_len)
 		{
 			if (line[i] != '1')
 				ft_free_error("Not a valide middle line", start->map);
@@ -87,10 +87,8 @@ void	check_map_validity(t_start *start)
 {
 	int		i;
 	int		map_height;
-	size_t	line_len;
 
 	i = 0;
-	line_len = ft_strlen(start->map[i]);
 	map_height = array_size(start->map) - 1;
 	while (start->map[i])
 	{
@@ -98,8 +96,6 @@ void	check_map_validity(t_start *start)
 			is_wall(start->map[i], start->map);
 		else
 			is_between(start->map[i], start, i);
-		if (ft_strlen(start->map[i]) != line_len)
-			ft_free_error("Not a rectangle", start->map);
 		i++;
 	}
 	if (start->count_p > 1 || start->count_e > 1)
