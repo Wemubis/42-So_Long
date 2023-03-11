@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 12:19:03 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/10 20:00:40 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/11 14:57:18 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static void	open_img(t_start *s)
 {
-	s->height = 80;
-	s->width = 80;
+	s->height = 64;
+	s->width = 64;
 	s->p_exit = "sprites/exit.xpm";
 	s->floor = "sprites/floor.xpm";
 	s->wall = "sprites/wall.xpm";
@@ -57,7 +57,7 @@ void	start_game(t_start *sl)
 		ft_free_error("mlx_init() failed", sl->map);
 	open_img(sl);
 	init_window(sl);
-	draw_map_on_win(sl);
+	mlx_loop_hook(sl->ptr, draw_map_on_win, sl);
 	mlx_hook(sl->win, KeyRelease, KeyReleaseMask, key_press, sl);
 	mlx_hook(sl->win, DestroyNotify, ButtonPressMask, end, sl);
 	mlx_loop(sl->ptr);

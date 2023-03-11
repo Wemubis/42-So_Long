@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 14:54:37 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/10 19:46:21 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/11 12:46:39 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,8 @@
 # include "libft/libft.h"
 
 /*---------- DEFINE, MORE READABLE ----------*/
-# define ESC 27
-# define W 87
-# define A 65
-# define S 83
-# define D 68
-# define UP 1
-# define DOWN -1
+# define UP -1
+# define DOWN 1
 # define LEFT -1
 # define RIGHT 1
 
@@ -81,8 +76,8 @@ void	check_map_validity(t_start *start);
 void	check_if_doable(t_start *game);
 
 /*------------------ WIDNOW -----------------*/
+int		draw_map_on_win(t_start *sl);
 void	mlx_free_sprites(t_start *sl);
 void	print_to_win(t_start *s, void *img);
-void	draw_map_on_win(t_start *sl);
 
 #endif
