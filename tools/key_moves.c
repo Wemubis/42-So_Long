@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 19:14:01 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/11 16:03:49 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/11 19:29:23 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ static void	move_y_axis(t_start *s, int dir)
 	s->map[s->player.y][x] = 'P';
 	if (y != s->player.y)
 		++s->nb_move;
-	ft_printf("Number of moves : %d\n", s->nb_move);
 }
 
 static void	move_x_axis(t_start *s, int dir)
@@ -88,11 +87,13 @@ static void	move_x_axis(t_start *s, int dir)
 	s->map[y][s->player.x] = 'P';
 	if (x != s->player.x)
 		++s->nb_move;
-	ft_printf("Number of moves : %d\n", s->nb_move);
 }
 
 int	key_press(int press, t_start *sl)
 {
+	int	move;
+
+	move = sl->nb_move;
 	if (press == XK_Escape)
 		close_game(sl, 0);
 	else if (press == XK_w)
@@ -103,5 +104,7 @@ int	key_press(int press, t_start *sl)
 		move_y_axis(sl, DOWN);
 	else if (press == XK_d)
 		move_x_axis(sl, RIGHT);
+	if (move != sl->nb_move)
+		ft_printf("Number of moves : %d\n", sl->nb_move);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 12:19:03 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/11 14:57:18 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/11 21:01:08 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,12 @@ static void	init_window(t_start *sl)
 	sl->win = mlx_new_window(sl->ptr, (len * sl->width), (i * sl->height),
 			"So_long");
 	if (!sl->win)
-		kill_all(sl);
-	sl->win_w = len;
-	sl->win_h = i;
+		end(sl);
+	if (len > 1920 / sl->width || i > 1080 / sl->height)
+	{
+		end(sl);
+		error("Too big for HD screen");
+	}
 }
 
 void	start_game(t_start *sl)

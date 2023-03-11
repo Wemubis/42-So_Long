@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 14:54:37 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/11 12:46:39 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/11 21:00:55 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int		key_press(int press, t_start *start);
 /*------------------ TOOLS ------------------*/
 void	error(char *str);
 int		end(t_start *start);
-int		kill_all(t_start *start);
+void	ft_free(char **map);
 void	ft_free_error(char *str, char **map);
 char	**parse_file(char *file_name);
 void	check_map_validity(t_start *start);
@@ -78,6 +78,5 @@ void	check_if_doable(t_start *game);
 /*------------------ WIDNOW -----------------*/
 int		draw_map_on_win(t_start *sl);
 void	mlx_free_sprites(t_start *sl);
-void	print_to_win(t_start *s, void *img);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 18:30:18 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/11 15:35:32 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/11 21:00:50 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	error(char *str)
 	exit(EXIT_FAILURE);
 }
 
-static void	ft_free(char **map)
+void	ft_free(char **map)
 {
 	int	i;
 
@@ -42,20 +42,9 @@ int	end(t_start *start)
 {
 	ft_free(start->map);
 	mlx_free_sprites(start);
-	mlx_destroy_display(start->ptr);
+	mlx_clear_window(start->ptr, start->win);
 	mlx_destroy_window(start->ptr, start->win);
+	mlx_destroy_display(start->ptr);
 	free(start->ptr);
-	free(start->win);
 	exit(EXIT_SUCCESS);
-}
-
-int	kill_all(t_start *start)
-{
-	ft_free(start->map);
-	mlx_free_sprites(start);
-	mlx_destroy_display(start->ptr);
-	mlx_destroy_window(start->ptr, start->win);
-	free(start->ptr);
-	free(start->win);
-	exit(EXIT_FAILURE);
 }
