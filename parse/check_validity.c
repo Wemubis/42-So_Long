@@ -97,7 +97,7 @@ void	check_map_validity(t_start *start)
 		else
 			is_between(start->map[i], start, i);
 		if (i != 0 && ft_strlen(start->map[i - 1]) != ft_strlen(start->map[i]))
-			ft_free_error("Not a recatangle map sry !!", start->map);
+			ft_free_error("Not a rectangle map sry !!", start->map);
 		i++;
 	}
 	if (start->count_p > 1 || start->count_e > 1)
