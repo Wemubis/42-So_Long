@@ -14,7 +14,7 @@
 
 static void	close_game(t_start *start, int k)
 {
-	if (k ==0)
+	if (k == 0)
 		ft_printf("You noob!!!\nEven a lil baby would have done this map!! ;)\n");
 	else
 		ft_printf("Well done bro!! You're THE man");
