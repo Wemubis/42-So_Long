@@ -13,9 +13,7 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-#ifndef BUFFER_SIZE
 # define BUFFER_SIZE 256
-#endif
 
 /*-------------------------HEAD-------------------------*/
 # include <unistd.h>
