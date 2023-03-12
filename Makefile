@@ -6,7 +6,7 @@
 #    By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/13 18:34:33 by mle-boud          #+#    #+#              #
-#    Updated: 2023/03/09 18:14:07 by mle-boud         ###   ########.fr        #
+#    Updated: 2023/03/12 13:04:16 by mle-boud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,13 +52,14 @@ $(NAME): $(OBJS) libft/libft.a
 	$(CC) $^ $(FOR_MLX) -o $@
 
 otherMakefile:
-	make -C libft
+	@bash -c "cd mlx_linux/ && ./configure && cd ..";
+	@make -C libft
 
 %.o: %.c $(HEADER)
 	$(CC) $(CFLAGS) -I. -O3 -c $< -o $@
 
 clean:
-	make -C libft clean
+	@make -C libft clean
 	$(RM) $(OBJS)
 
 fclean: clean

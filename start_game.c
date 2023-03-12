@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 12:19:03 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/11 21:01:08 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/12 12:43:20 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,10 @@ static void	init_window(t_start *sl)
 			"So_long");
 	if (!sl->win)
 		end(sl);
-	if (len > 1920 / sl->width || i > 1080 / sl->height)
+	if (len > 3840 / sl->width || i > 2160 / sl->height)
 	{
 		end(sl);
-		error("Too big for HD screen");
+		error("Too big for 4K screen");
 	}
 }
 
@@ -61,7 +61,7 @@ void	start_game(t_start *sl)
 	open_img(sl);
 	init_window(sl);
 	mlx_loop_hook(sl->ptr, draw_map_on_win, sl);
-	mlx_hook(sl->win, KeyRelease, KeyReleaseMask, key_press, sl);
+	mlx_hook(sl->win, KeyPress, KeyPressMask, key_press, sl);
 	mlx_hook(sl->win, DestroyNotify, ButtonPressMask, end, sl);
 	mlx_loop(sl->ptr);
 }
