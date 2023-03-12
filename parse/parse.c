@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 12:29:58 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/09 18:08:54 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/12 12:08:19 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static int	open_map(char *file_name)
 
 static char	**list_to_arr(t_list *list)
 {
-	t_list *tmp;
+	t_list	*tmp;
 	char	**arr;
 	int		len_line;
 	int		nb_line;
