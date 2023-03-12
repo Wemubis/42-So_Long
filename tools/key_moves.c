@@ -6,19 +6,22 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 19:14:01 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/12 12:18:17 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/12 12:28:49 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-static void	close_game(t_start *start, int k)
+static void	close_game(t_start *sl, int k)
 {
 	if (k == 0)
 		ft_printf("You noob!!!\nEven a lil baby would have done this map!! ;)\n");
 	else
+	{
+		ft_printf("Number of moves : %d\n", ++sl->nb_move);
 		ft_printf("Well done bruuh!! You're THE man\n");
-	end(start);
+	}
+	end(sl);
 }
 
 static int	nb_item(t_start *s)
