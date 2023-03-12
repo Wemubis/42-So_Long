@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 19:14:01 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/12 12:28:49 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/12 12:31:02 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	close_game(t_start *sl, int k)
 {
 	if (k == 0)
-		ft_printf("You noob!!!\nEven a lil baby would have done this map!! ;)\n");
+		ft_printf("You noob!\nEven a lil baby would have done this map! ;)\n");
 	else
 	{
 		ft_printf("Number of moves : %d\n", ++sl->nb_move);
