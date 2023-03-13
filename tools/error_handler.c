@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 18:30:18 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/11 21:00:50 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/13 22:43:25 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	error(char *str)
 {
-	ft_printf("Error:\n%s\n", str);
+	ft_printf("Error\n%s\n", str);
 	exit(EXIT_FAILURE);
 }
 

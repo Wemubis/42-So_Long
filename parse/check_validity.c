@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:40:57 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/12 12:26:51 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/13 22:14:34 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ void	check_map_validity(t_start *start)
 	int		map_height;
 
 	i = 0;
+	check_2(start);
 	map_height = array_size(start->map) - 1;
 	while (start->map[i])
 	{
@@ -96,8 +97,6 @@ void	check_map_validity(t_start *start)
 			is_wall(start->map[i], start->map);
 		else
 			is_between(start->map[i], start, i);
-		if (i != 0 && ft_strlen(start->map[i - 1]) != ft_strlen(start->map[i]))
-			ft_free_error("Not a rectangle map sry !!", start->map);
 		i++;
 	}
 	if (start->count_p > 1 || start->count_e > 1)

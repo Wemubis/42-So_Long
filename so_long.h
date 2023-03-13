@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 14:54:37 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/11 21:00:55 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/13 22:00:11 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ int		end(t_start *start);
 void	ft_free(char **map);
 void	ft_free_error(char *str, char **map);
 char	**parse_file(char *file_name);
+void	check_2(t_start *start);
 void	check_map_validity(t_start *start);
 void	check_if_doable(t_start *game);
 

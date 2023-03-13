@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 12:29:58 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/12 12:08:19 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/13 22:39:54 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,21 +36,18 @@ static char	**list_to_arr(t_list *list)
 {
 	t_list	*tmp;
 	char	**arr;
-	int		len_line;
 	int		nb_line;
 	int		i;
 
 	i = 0;
 	nb_line = ft_lstsize(list);
-	len_line = ft_strlen(list->content) - 1;
 	arr = malloc(sizeof(char *) * (nb_line + 1));
 	if (!arr)
 		error("malloc");
 	tmp = list;
-	while (tmp)
+	while (i < nb_line)
 	{
 		arr[i++] = ft_strdup(tmp->content);
-		arr[i - 1][len_line] = '\0';
 		tmp = tmp->next;
 	}
 	ft_lstclear(&list, free);

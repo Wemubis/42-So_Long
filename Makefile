@@ -6,14 +6,14 @@
 #    By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/13 18:34:33 by mle-boud          #+#    #+#              #
-#    Updated: 2023/03/12 13:04:16 by mle-boud         ###   ########.fr        #
+#    Updated: 2023/03/13 19:57:51 by mle-boud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g3
 RM = rm -f
 
 HEADER = so_long.h /usr/include Imlx_linux
@@ -30,7 +30,7 @@ SRCS = main.c start_game.c \
 TOOLS = draw_map_on_win.c error_handler.c key_moves.c \
 	my_mlx_tools.c \
 
-PARSE = check_doability.c check_validity.c parse.c \
+PARSE = check_2.c check_doability.c check_validity.c parse.c \
 
 ###--------------- DIRS + SRCS ---------------###
 SRCS_TOOLS = $(addprefix $(DIR_TOOLS), $(TOOLS))

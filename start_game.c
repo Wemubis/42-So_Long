@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 12:19:03 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/12 12:43:20 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/13 22:26:33 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ static void	init_window(t_start *sl)
 		end(sl);
 	if (len > 3840 / sl->width || i > 2160 / sl->height)
 	{
+		ft_printf("Too big for 4K screen");
 		end(sl);
-		error("Too big for 4K screen");
 	}
 }
 
