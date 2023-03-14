@@ -15,6 +15,34 @@
 
 # define BUFFER_SIZE 256
 
+/*			Text Color			*/
+# define BLACK   "\033[30m"
+# define RED     "\033[31m"
+# define GREEN   "\033[32m"
+# define YELLOW  "\033[33m"
+# define BLUE    "\033[34m"
+# define PURPLE  "\033[35m"
+# define CYAN    "\033[36m"
+# define WHITE   "\033[37m"
+/*		Background Color		*/
+# define BLACKB  "\033[40m"
+# define REDB    "\033[41m"
+# define GREENB  "\033[42m"
+# define YELLOWB "\033[43m"
+# define BLUEB   "\033[44m"
+# define PURPLEB "\033[45m"
+# define CYANB   "\033[46m"
+# define WHITEB  "\033[47m"
+/*			Underline			*/
+# define U       "\033[4m"
+# define U_OFF   "\033[24m"
+/*			Bold			*/
+# define B       "\033[1m"
+# define B_OFF   "\033[22m"
+/*			Italic			*/
+# define I       "\033[3m"
+# define I_OFF   "\033[23m"
+
 /*-------------------------HEAD-------------------------*/
 # include <unistd.h>
 # include <stdlib.h>

@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 19:14:01 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/12 12:31:02 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/14 12:30:43 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	close_game(t_start *sl, int k)
 	else
 	{
 		ft_printf("Number of moves : %d\n", ++sl->nb_move);
-		ft_printf("Well done bruuh!! You're THE man\n");
+		ft_printf("%sWell done bro!! You're THE man\n", GREEN);
 	}
 	end(sl);
 }
