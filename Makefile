@@ -6,7 +6,7 @@
 #    By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/13 18:34:33 by mle-boud          #+#    #+#              #
-#    Updated: 2023/03/13 19:57:51 by mle-boud         ###   ########.fr        #
+#    Updated: 2023/03/15 19:55:54 by mle-boud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,7 @@ $(NAME): $(OBJS) libft/libft.a
 
 otherMakefile:
 	@bash -c "cd mlx_linux/ && ./configure && cd ..";
-	@make -C libft
+	@make -C libft --no-print-directory
 
 %.o: %.c $(HEADER)
 	$(CC) $(CFLAGS) -I. -O3 -c $< -o $@
