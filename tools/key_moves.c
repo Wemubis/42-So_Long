@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 19:14:01 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/14 12:30:43 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/17 15:20:08 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,13 +99,13 @@ int	key_press(int press, t_start *sl)
 	move = sl->nb_move;
 	if (press == XK_Escape)
 		close_game(sl, 0);
-	else if (press == XK_w)
+	else if (press == XK_w || press == XK_Up)
 		move_y_axis(sl, UP);
-	else if (press == XK_a)
+	else if (press == XK_a || press == XK_Left)
 		move_x_axis(sl, LEFT);
-	else if (press == XK_s)
+	else if (press == XK_s || press == XK_Down)
 		move_y_axis(sl, DOWN);
-	else if (press == XK_d)
+	else if (press == XK_d || press == XK_Right)
 		move_x_axis(sl, RIGHT);
 	if (move != sl->nb_move)
 		ft_printf("Number of moves : %d\n", sl->nb_move);
