@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 12:29:58 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/13 22:39:54 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/27 15:59:11 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	open_map(char *file_name)
 	}
 	fd = open(file_name, O_RDONLY);
 	if (fd == -1)
-		error("Can't RDONLY");
+		error(strerror(errno));
 	return (fd);
 }
 
