@@ -32,5 +32,5 @@ ft_so_long est un jeu simple inspiré du classique jeu vidéo "Sokoban". Le joue
 `./so_long maps/map.ber`
 
 4. Ressources :
-- [MinilibX Documentation]()
-- [Sokoban]()
+- [MinilibX Documentation](https://harm-smits.github.io/42docs/libs/minilibx/getting_started.html)
+- [Sokoban](https://fr.wikipedia.org/wiki/Sokoban)
