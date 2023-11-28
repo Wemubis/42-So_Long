@@ -23,14 +23,20 @@ ft_so_long est un jeu simple inspiré du classique jeu vidéo "Sokoban". Le joue
 ## Utilisation
 
 1. Clonez ce dépôt :
-`git clone `
+```bash
+  git clone https://github.com/Wemubis/so_long.git
+```
 
-2. Compilez le projet :
-`make`
+3. Compilez le projet :
+```bash
+  make
+```
 
-3. Exécutez le jeu avec une carte spécifique :
-`./so_long maps/map.ber`
+5. Exécutez le jeu avec une carte spécifique :
+```bash
+  ./so_long maps/map.ber
+```
 
-4. Ressources :
+7. Ressources :
 - [MinilibX Documentation](https://harm-smits.github.io/42docs/libs/minilibx/getting_started.html)
 - [Sokoban](https://fr.wikipedia.org/wiki/Sokoban)
